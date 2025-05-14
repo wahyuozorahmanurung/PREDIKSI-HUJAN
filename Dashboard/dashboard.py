@@ -18,7 +18,7 @@ plt.rcParams["figure.figsize"] = (10, 5)
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv("weatherAUS.csv")
+        df = pd.read_csv("Dashboard/weatherAUS.csv")
         return df
     except Exception as e:
         st.error(f"Error loading dataset: {e}")
