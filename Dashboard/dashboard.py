@@ -17,12 +17,16 @@ plt.rcParams["figure.figsize"] = (10, 5)
 # Load dataset
 @st.cache_data
 def load_data():
+    file_id = "1fn6-tAovWTvjDt46Zbprkk_j1ybEaJn7"
+    url = f"https://drive.google.com/uc?export=download&id={file_id}"
+    
     try:
-        df = pd.read_csv("Dashboard/weatherAUS.csv")
+        df = pd.read_csv(url)
         return df
     except Exception as e:
         st.error(f"Error loading dataset: {e}")
         return None
+
 
 # Preprocess data
 def preprocess_data(df):
